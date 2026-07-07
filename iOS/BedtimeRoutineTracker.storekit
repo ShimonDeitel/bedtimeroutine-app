@@ -1,0 +1,40 @@
+{
+  "identifier" : "BedtimeRoutineTracker",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {},
+  "subscriptionGroups" : [
+    {
+      "id" : "BedtimeRoutineTrackerPro",
+      "localizations" : [],
+      "name" : "BedtimeRoutineTracker Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "BedtimeRoutineTrackerProMonthly",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock Streak tracking and multiple kid profiles.",
+              "displayName" : "BedtimeRoutineTracker Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.shimondeitel.bedtimeroutine.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "BedtimeRoutineTracker Pro Monthly",
+          "subscriptionGroupID" : "BedtimeRoutineTrackerPro",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

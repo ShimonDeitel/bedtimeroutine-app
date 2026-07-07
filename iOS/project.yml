@@ -1,0 +1,75 @@
+name: BedtimeRoutineTracker
+options:
+  bundleIdPrefix: com.shimondeitel.bedtimeroutine
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  BedtimeRoutineTracker:
+    type: application
+    platform: iOS
+    sources:
+      - path: BedtimeRoutineTracker
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.bedtimeroutine
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: BedtimeRoutineTracker/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  BedtimeRoutineTrackerTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: BedtimeRoutineTrackerTests
+      - path: BedtimeRoutineTracker.storekit
+    dependencies:
+      - target: BedtimeRoutineTracker
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.bedtimeroutine.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  BedtimeRoutineTrackerUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: BedtimeRoutineTrackerUITests
+    dependencies:
+      - target: BedtimeRoutineTracker
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.bedtimeroutine.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  BedtimeRoutineTracker:
+    build:
+      targets:
+        BedtimeRoutineTracker: all
+        BedtimeRoutineTrackerTests: [test]
+        BedtimeRoutineTrackerUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: BedtimeRoutineTracker.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: BedtimeRoutineTracker.storekit
+      targets:
+        - BedtimeRoutineTrackerTests
+        - BedtimeRoutineTrackerUITests
+    archive:
+      config: Release
